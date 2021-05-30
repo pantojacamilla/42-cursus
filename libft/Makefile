@@ -1,13 +1,12 @@
-# SRC = $(wildcard *.c)
 # .PHONY: all clean fclean re
 # NAME	= libft.a
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
-# all: ${SRC}
+# all:
 
 output: main.o ft_strlen.o
-	${CC} ${CFLAGS} main.o ft_strlen.o -o output
+	${CC} ${CFLAGS} main.o ft_strlen.o -o output.out
 
 main.o: main.c
 	${CC} ${CFLAGS} -c main.c
