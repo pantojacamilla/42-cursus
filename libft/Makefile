@@ -1,9 +1,10 @@
-# .PHONY: all clean fclean re
+.PHONY: all clean run #fclean re
 # NAME	= libft.a
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
-# all:
+
+all: clean run
 
 output: main.o ft_strlen.o
 	${CC} ${CFLAGS} main.o ft_strlen.o -o output.o
@@ -15,4 +16,7 @@ ft_strlen.o: ft_strlen.c libft.h
 	${CC} ${CFLAGS} -c ft_strlen.c
 
 clean:
-	rm *.o output
+	rm *.o
+
+run:
+	@./output.o
