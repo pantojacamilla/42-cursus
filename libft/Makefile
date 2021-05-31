@@ -16,7 +16,7 @@ ft_strlen.o: ft_strlen.c libft.h
 	${CC} ${CFLAGS} -c ft_strlen.c
 
 clean:
-	rm *.o
+	@rm *.o
 
 run:
 	@./output.o
