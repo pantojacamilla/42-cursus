@@ -1,4 +1,4 @@
 # 42-cursus
 Projects made during the 42 program
 
-1 - libf (17/05 - )
+1 - Libft (17/05 - )
