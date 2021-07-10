@@ -1,14 +1,13 @@
 #include "libft.h"
+#include <strings.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int		amount_chars_src;
-	int		current_position;
-	char	*start;
+	size_t	amount_chars_src;
+	size_t	current_position;
 
 	current_position = 0;
 	amount_chars_src = 0;
-	*start = *src;
 	if (dstsize > 0)
 	{
 		while (*src != '\0' && current_position < (dstsize - 1))
@@ -20,9 +19,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		*dst = '\0';
 	}
-	while (*start != '\0')
+
+	// FIX THIS ASAP
+	while (*src != '\0')
 	{
-		start++;
+		src++;
 		amount_chars_src++;
 	}
 	return (amount_chars_src);

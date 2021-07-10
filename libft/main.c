@@ -1,11 +1,26 @@
 #include "libft.h"
 #include <stdio.h>
 
-int	main(void)
+int main (void)
 {
-	const char	*s = "Oi mundo";
+	char first[] = "AEI ";
+	char last[] = "OU";
+	int r;
+	int size = 100;
+	char buffer[size];
 
-	printf("%s", s);
-	printf("\n%zu\n", ft_strlen(s));
+	strcpy(buffer,first);
+	r = strlcat(buffer,last,size); //siezeof()
+
+	puts(buffer);
+	printf("Value returned: %d\n",r);
+
+	 // r deveria ser igual ou menor que size pois isso representa que a string coube no buffer e não foi truncada
+	 // r > que size significa que se tentou passar uma sting maior que o buffer destino, daí não vai mesmo
+	if( r > size )
+		puts("TRUNCADO");
+	else
+		puts("FULLY COPIED");
+
 	return (0);
 }
