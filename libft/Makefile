@@ -1,22 +1,29 @@
-.PHONY: all clean run #fclean re
-# NAME	= libft.a
-
+NAME = libft.a
+HEADER = libft.h
+FLAGS = -Wall -Wextra -Werror
 CC = clang
-CFLAGS = -Wall -Wextra -Werror
+AR = ar rc
+RM = rm -f
 
-all: clean run
+SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
+	ft_strlcpy.c ft_tolower.c ft_tolower.c #ft_strlcat.c
 
-output: main.o ft_strlen.o
-	${CC} ${CFLAGS} main.o ft_strlen.o -o output.o
+OBJ = $(SRCS:.c=.o)
 
-main.o: main.c
-	${CC} ${CFLAGS} -c main.c
+all: $(NAME)
 
-ft_strlen.o: ft_strlen.c libft.h
-	${CC} ${CFLAGS} -c ft_strlen.c
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $(OBJ)
+
+$(OBJ): $(SRCS) $(HEADER)
+	$(CC) $(FLAGS) -c $(SRCS)
 
 clean:
-	@rm *.o
+	$(RM) $(OBJ)
 
-run:
-	@./output.o
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all, clean, fclean, re
