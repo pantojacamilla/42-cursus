@@ -6,7 +6,7 @@ AR = ar rc
 RM = rm -f
 
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
-	ft_strlcpy.c ft_tolower.c ft_tolower.c #ft_strlcat.c
+	ft_strlcpy.c ft_tolower.c ft_tolower.c
 
 OBJ = $(SRCS:.c=.o)
 
